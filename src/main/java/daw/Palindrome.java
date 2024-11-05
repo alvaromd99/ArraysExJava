@@ -26,7 +26,8 @@ public class Palindrome {
 
         for (String word : words) {
             System.out.println(word + " is palindrome -> "
-                    + isPalindrome(word.toLowerCase().toCharArray()));
+                    + isPalindrome(word.toLowerCase().replaceAll(" ", "")
+                            .toCharArray()));
         }
     }
     
