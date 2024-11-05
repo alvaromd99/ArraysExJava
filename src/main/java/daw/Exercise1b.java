@@ -26,22 +26,22 @@ public class Exercise1b {
         boolean res1Fun = list1.equals(list2);
         boolean res2Fun = list3.equals(list4);
         boolean res3Fun = list5.equals(list6);
-        
+
         boolean res1Met = areArrListEquales(list1, list2);
         boolean res2Met = areArrListEquales(list3, list4);
         boolean res3Met = areArrListEquales(list5, list6);
-        
+
         showResponse(list1, list2, res1Fun);
         showResponse(list3, list4, res2Fun);
         showResponse(list5, list6, res3Fun);
-        
+
         System.out.println("");
-        
+
         showResponse(list1, list2, res1Met);
         showResponse(list3, list4, res2Met);
         showResponse(list5, list6, res3Met);
     }
-    
+
     public static void showResponse(ArrayList<Integer> a, ArrayList<Integer> b,
             boolean res) {
         System.out.println(a.toString());
@@ -49,12 +49,26 @@ public class Exercise1b {
         System.out.println("Son iguales ? " + res);
     }
 
+    /**
+     * Compares two arrays list of integers for equality.
+     * <p>
+     * This method checks if the two arrays list are of the same length and if 
+     * every corresponding element in the arrays is equal. The comparison is 
+     * done element by element.
+     * </p>
+     *
+     * @param a The first array list of integers to compare.
+     * @param b The second array list of integers to compare.
+     * @return  {@code true} if the two arrays have the same length and all
+     *                       corresponding elements are equal; 
+     *          {@code false} otherwise.
+     */
     public static boolean areArrListEquales(ArrayList<Integer> a,
             ArrayList<Integer> b) {
         if (a.size() != b.size()) {
             return false;
         }
-        
+
         for (int i = 0; i < a.size(); i++) {
             if (a.get(i) != b.get(i)) {
                 return false;

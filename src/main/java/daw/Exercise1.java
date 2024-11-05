@@ -16,7 +16,7 @@ public class Exercise1 {
         // Arrays to test
         int[] arr1 = new int[]{1, 2, 3};
         int[] arr2 = new int[]{1, 2, 3};
-        
+
         int[] arr3 = new int[]{1, 2, 3, 4};
         int[] arr4 = new int[]{1, 2, 3};
 
@@ -26,17 +26,17 @@ public class Exercise1 {
         boolean res1Func = Arrays.compare(arr1, arr2) == 0;
         boolean res2Func = Arrays.compare(arr3, arr4) == 0;
         boolean res3Func = Arrays.compare(arr5, arr6) == 0;
-        
+
         boolean res1Met = areArraysEquals(arr1, arr2);
         boolean res2Met = areArraysEquals(arr3, arr4);
         boolean res3Met = areArraysEquals(arr5, arr6);
-                
+
         showResponse(arr1, arr2, res1Func);
         showResponse(arr3, arr4, res1Func);
         showResponse(arr5, arr6, res1Func);
-        
+
         System.out.println("");
-        
+
         showResponse(arr1, arr2, res1Met);
         showResponse(arr3, arr4, res2Met);
         showResponse(arr5, arr6, res3Met);
@@ -48,6 +48,20 @@ public class Exercise1 {
         System.out.println("Son iguales ? " + res);
     }
 
+    /**
+     * Compares two arrays of integers for equality.
+     * <p>
+     * This method checks if the two arrays are of the same length and if every
+     * corresponding element in the arrays is equal. The comparison is done
+     * element by element.
+     * </p>
+     *
+     * @param a The first array of integers to compare.
+     * @param b The second array of integers to compare.
+     * @return  {@code true} if the two arrays have the same length and all
+     *                       corresponding elements are equal; 
+     *          {@code false} otherwise.
+     */
     public static boolean areArraysEquals(int[] a, int[] b) {
         if (a.length != b.length) {
             return false;
