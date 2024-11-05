@@ -22,18 +22,18 @@ public class Exercise1 {
 
         int[] arr5 = new int[]{1, 2, 3};
         int[] arr6 = new int[]{1, 2, 2};
-
-        boolean res1Func = Arrays.compare(arr1, arr2) == 0;
-        boolean res2Func = Arrays.compare(arr3, arr4) == 0;
-        boolean res3Func = Arrays.compare(arr5, arr6) == 0;
+        
+        boolean res1Func = Arrays.equals(arr1, arr2);
+        boolean res2Func = Arrays.equals(arr3, arr4);
+        boolean res3Func = Arrays.equals(arr5, arr6);
 
         boolean res1Met = areArraysEquals(arr1, arr2);
         boolean res2Met = areArraysEquals(arr3, arr4);
         boolean res3Met = areArraysEquals(arr5, arr6);
 
         showResponse(arr1, arr2, res1Func);
-        showResponse(arr3, arr4, res1Func);
-        showResponse(arr5, arr6, res1Func);
+        showResponse(arr3, arr4, res2Func);
+        showResponse(arr5, arr6, res3Func);
 
         System.out.println("");
 
