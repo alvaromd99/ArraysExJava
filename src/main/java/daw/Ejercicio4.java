@@ -20,29 +20,31 @@ public class Ejercicio4 {
         final int TAM = 10;
 
         int num = 0;
+        int[] arr = new int[4];
 
         ArrayList<int[]> list = new ArrayList<>();
         ArrayList<int[]> pinList = new ArrayList<>();
 
         list = randomPinList(TAM);
 
+        System.out.println("Lista de los pins en la lista principal: ");
         showListOfArray(list);
-
-//        num = getNumber();
-//        pinList = getPinWithNum(list, num);
-//
-//        showListOfArray(pinList);
-        int[] test = new int[4];
-        test = getIntArray();
-        System.out.println("Array del usuario: ");
-        System.out.println(Arrays.toString(test));
         
-        System.out.println("Esta el array introducido en la lista principal? " 
-                + isArrayInList(list, test));
+        // Parte 1
+        num = getNumber();
+        pinList = getPinWithNum(list, num);
+        System.out.println("Lista de los pins con el numero " + num + ": ");
+        showListOfArray(pinList);
+        
+        // Parte 2
+        arr = getIntArray();
+        System.out.println("Array del usuario: ");
+        System.out.println(Arrays.toString(arr));
+        System.out.println("Esta el array introducido en la lista principal? "
+                + isArrayInList(list, arr));
     }
 
     public static void showListOfArray(ArrayList<int[]> list) {
-        System.out.println("Arrays dentro de la lista: ");
         for (int[] el : list) {
             System.out.println(Arrays.toString(el));
         }
@@ -137,7 +139,7 @@ public class Ejercicio4 {
         }
         return arr;
     }
-    
+
     public static boolean isArrayInList(ArrayList<int[]> list, int[] arr) {
         for (int[] listElem : list) {
             if (Arrays.equals(listElem, arr)) {
