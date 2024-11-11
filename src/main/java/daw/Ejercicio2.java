@@ -45,15 +45,15 @@ public class Ejercicio2 {
     }
 
     public static void showList2(ArrayList<Integer> list) {
-        System.out.printf("{ ");
+        System.out.print("{ ");
         for (int i = 0; i < list.size(); i++) {
-            System.out.printf(list.get(i) + " -> ");
+            System.out.print(list.get(i) + " -> ");
 
             if (i == list.size() - 1) {
-                System.out.printf(list.get(i) + "");
+                System.out.print(list.get(i));
             }
         }
-        System.out.printf(" }");
+        System.out.print(" }");
     }
 
     public static ArrayList<Integer> multiplyLists(ArrayList<Integer> listA,
