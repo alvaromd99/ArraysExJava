@@ -34,7 +34,11 @@ public class Ejercicio4 {
 //        showListOfArray(pinList);
         int[] test = new int[4];
         test = getIntArray();
+        System.out.println("Array del usuario: ");
         System.out.println(Arrays.toString(test));
+        
+        System.out.println("Esta el array introducido en la lista principal? " 
+                + isArrayInList(list, test));
     }
 
     public static void showListOfArray(ArrayList<int[]> list) {
@@ -132,5 +136,14 @@ public class Ejercicio4 {
             } while (true);
         }
         return arr;
+    }
+    
+    public static boolean isArrayInList(ArrayList<int[]> list, int[] arr) {
+        for (int[] listElem : list) {
+            if (Arrays.equals(listElem, arr)) {
+                return true;
+            }
+        }
+        return false;
     }
 }
