@@ -22,12 +22,13 @@ public class Exercise2 {
 
         giveRandomValues(list1, TAM);
         giveRandomValues(list2, TAM);
-        
+
         showList(list1);
         showList(list2);
-        
+
         listRes = multiplyLists(list1, list2);
         showList(listRes);
+        showList2(listRes);
     }
 
     public static void giveRandomValues(ArrayList<Integer> list, int tam) {
@@ -43,14 +44,26 @@ public class Exercise2 {
         System.out.println(list.toString());
     }
 
-    public static ArrayList<Integer> multiplyLists(ArrayList<Integer> listA, 
+    public static void showList2(ArrayList<Integer> list) {
+        System.out.printf("{ ");
+        for (int i = 0; i < list.size(); i++) {
+            System.out.printf(list.get(i) + " -> ");
+
+            if (i == list.size() - 1) {
+                System.out.printf(list.get(i) + "");
+            }
+        }
+        System.out.printf(" }");
+    }
+
+    public static ArrayList<Integer> multiplyLists(ArrayList<Integer> listA,
             ArrayList<Integer> listB) {
         ArrayList<Integer> listRes = new ArrayList<>();
-        
+
         for (int i = 0; i < listA.size(); i++) {
             listRes.add(listA.get(i) * listB.get(i));
         }
-        
+
         return listRes;
     }
 }
