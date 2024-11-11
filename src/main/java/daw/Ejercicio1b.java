@@ -6,6 +6,7 @@ package daw;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Objects;
 
 /**
  *
@@ -70,7 +71,7 @@ public class Ejercicio1b {
         }
 
         for (int i = 0; i < a.size(); i++) {
-            if (a.get(i) != b.get(i)) {
+            if (!a.get(i).equals(b.get(i))) {
                 return false;
             }
         }
