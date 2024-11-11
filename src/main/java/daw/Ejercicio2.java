@@ -31,7 +31,6 @@ public class Ejercicio2 {
         
         System.out.println("Mostrar personalizado: ");
         showList2(listRes);
-        System.out.println("");
         showList3(listRes);
     }
 
@@ -57,7 +56,7 @@ public class Ejercicio2 {
                 System.out.print(list.get(i) + " -> ");
             }
         }
-        System.out.print(" }");
+        System.out.println(" }");
     }
 
     public static void showList3(ArrayList<Integer> list) {
