@@ -18,7 +18,7 @@ public class Ejercicio4 {
 
     public static void main(String[] args) {
         final int TAM = 10;
-        
+
         int num = 0;
 
         ArrayList<int[]> list = new ArrayList<>();
@@ -28,10 +28,13 @@ public class Ejercicio4 {
 
         showListOfArray(list);
 
-        num = getNumber();
-        pinList = getPinWithNum(list, num);
-
-        showListOfArray(pinList);
+//        num = getNumber();
+//        pinList = getPinWithNum(list, num);
+//
+//        showListOfArray(pinList);
+        int[] test = new int[4];
+        test = getIntArray();
+        System.out.println(Arrays.toString(test));
     }
 
     public static void showListOfArray(ArrayList<int[]> list) {
@@ -111,5 +114,23 @@ public class Ejercicio4 {
         } while (n < 0 || n > 9);
 
         return n;
+    }
+
+    public static int[] getIntArray() {
+        int[] arr = new int[4];
+        int n = 0;
+
+        for (int i = 0; i < arr.length; i++) {
+            // Controlamos que no pueda introducir numeros repetidos
+            do {
+                n = getNumber();
+
+                if (!isInArray(arr, n)) {
+                    arr[i] = n;
+                    break;
+                }
+            } while (true);
+        }
+        return arr;
     }
 }
