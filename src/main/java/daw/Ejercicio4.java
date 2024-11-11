@@ -6,7 +6,9 @@ package daw;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.InputMismatchException;
 import java.util.Random;
+import java.util.Scanner;
 
 /**
  *
@@ -16,12 +18,20 @@ public class Ejercicio4 {
 
     public static void main(String[] args) {
         final int TAM = 10;
+        
+        int num = 0;
 
         ArrayList<int[]> list = new ArrayList<>();
+        ArrayList<int[]> pinList = new ArrayList<>();
 
         list = randomPinList(TAM);
 
         showListOfArray(list);
+
+        num = getNumber();
+        pinList = getPinWithNum(list, num);
+
+        showListOfArray(pinList);
     }
 
     public static void showListOfArray(ArrayList<int[]> list) {
@@ -58,7 +68,7 @@ public class Ejercicio4 {
         int i = 0;
         while (i < 4) {
             n = rd.nextInt(0, 10);
-            if (!isInArray(n, arr)) {
+            if (!isInArray(arr, n)) {
                 arr[i] = n;
                 i++;
             }
@@ -66,12 +76,40 @@ public class Ejercicio4 {
         return arr;
     }
 
-    public static boolean isInArray(int n, int[] arr) {
+    public static boolean isInArray(int[] arr, int n) {
         for (int el : arr) {
             if (el == n) {
                 return true;
             }
         }
         return false;
+    }
+
+    public static ArrayList<int[]> getPinWithNum(ArrayList<int[]> list, int n) {
+        ArrayList<int[]> listRes = new ArrayList<>();
+
+        for (int[] elem : list) {
+            if (isInArray(elem, n)) {
+                listRes.add(elem);
+            }
+        }
+        return listRes;
+    }
+
+    public static int getNumber() {
+        Scanner sc = new Scanner(System.in);
+        int n = 0;
+
+        do {
+            System.out.println("Introduce un numero (0 - 9): ");
+            try {
+                n = sc.nextInt();
+            } catch (InputMismatchException ime) {
+                System.out.println("Error. No has introducido un numero.");
+                sc.nextLine();
+            }
+        } while (n < 0 || n > 9);
+
+        return n;
     }
 }
