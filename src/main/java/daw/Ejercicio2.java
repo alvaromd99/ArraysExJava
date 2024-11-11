@@ -28,7 +28,11 @@ public class Ejercicio2 {
 
         listRes = multiplyLists(list1, list2);
         showList(listRes);
+        
+        System.out.println("Mostrar personalizado: ");
         showList2(listRes);
+        System.out.println("");
+        showList3(listRes);
     }
 
     public static void giveRandomValues(ArrayList<Integer> list, int tam) {
@@ -47,13 +51,25 @@ public class Ejercicio2 {
     public static void showList2(ArrayList<Integer> list) {
         System.out.print("{ ");
         for (int i = 0; i < list.size(); i++) {
-            System.out.print(list.get(i) + " -> ");
-
             if (i == list.size() - 1) {
                 System.out.print(list.get(i));
+            } else {
+                System.out.print(list.get(i) + " -> ");
             }
         }
         System.out.print(" }");
+    }
+
+    public static void showList3(ArrayList<Integer> list) {
+        String res = "";
+        res += "{ ";
+        for (Integer el : list) {
+            res = res.concat(el + " -> ");
+        }
+        res = res.substring(0, res.length() - 4);
+        res += " }";
+
+        System.out.println(res);
     }
 
     public static ArrayList<Integer> multiplyLists(ArrayList<Integer> listA,
