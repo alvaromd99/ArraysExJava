@@ -11,7 +11,7 @@ import java.util.Random;
  *
  * @author alvaro
  */
-public class Exercise2 {
+public class Ejercicio2 {
 
     public static void main(String[] args) {
         final int TAM = 10;

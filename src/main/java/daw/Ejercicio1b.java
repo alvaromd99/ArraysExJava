@@ -11,7 +11,7 @@ import java.util.Arrays;
  *
  * @author alvaro
  */
-public class Exercise1b {
+public class Ejercicio1b {
 
     public static void main(String[] args) {
         ArrayList<Integer> list1 = new ArrayList<>(Arrays.asList(1, 2, 3));

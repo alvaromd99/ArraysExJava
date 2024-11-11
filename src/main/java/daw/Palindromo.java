@@ -8,7 +8,7 @@ package daw;
  *
  * @author alvaro
  */
-public class Palindrome {
+public class Palindromo {
 
     public static void main(String[] args) {
         String[] words = {
@@ -25,7 +25,7 @@ public class Palindrome {
         };
 
         for (String word : words) {
-            System.out.println(word + " is palindrome -> "
+            System.out.println(word + " es un palindromo ? -> "
                     + isPalindrome(word.toLowerCase().replaceAll(" ", "")
                             .toCharArray()));
         }
