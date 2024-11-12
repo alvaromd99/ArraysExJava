@@ -17,12 +17,10 @@ public class Ejercicio5 {
     public static void main(String[] args) {
         String phrase = "";
         String phraseNoSpaces = "";
-        int indexA = 0;
-        char testChar = 'a';
         ArrayList<Integer> posList = new ArrayList<>();
 
         phrase = JOptionPane.showInputDialog("Introduzca una frase: ");
-        
+
         // Controlamos si cancelamos el jpotion
         if (Objects.isNull(phrase)) {
             phrase = "";
@@ -35,8 +33,9 @@ public class Ejercicio5 {
         System.out.println("De tamaño " + phrase.length());
 
         // Parte 2
-        System.out.println("La letra A esta en la posicion " + phrase
-                .toLowerCase().indexOf('a'));
+        char testChar = 'a';
+        System.out.println("La letra " + testChar + " esta en la posicion "
+                + phrase.toLowerCase().indexOf(testChar));
 
         System.out.println("");
 
