@@ -14,13 +14,45 @@ import java.util.Random;
 public class Ejercicio6 {
 
     public static void main(String[] args) {
-        final int TAM = 20;
+        final int TAM = 10;
         final int MIN = 10;
         final int MAX = 100;
         ArrayList<Integer> list = new ArrayList<>();
 
         list = giveRandomValuesToList(TAM, MIN, MAX + 1);
 
+        showIntList(list);
+
+        System.out.println("");
+        System.out.println("La suma de los enteros de la lista es "
+                + sumOfEvenNumOnList(list));
+
+        System.out.println("");
+        System.out.println("La cantidad de impares que hay en la lista es: "
+                + countOfOddNumOnList(list));
+
+        System.out.println("");
+        System.out.println("El mayor elemento de la lista es: "
+                + maxNumberInList(list));
+        System.out.println("El menor elemento de la lista es: "
+                + minNumberInList(list));
+
+        // Numeros para probar
+        int testPos = 0;
+        int testOcurrence = 34;
+        int testPos2 = 1;
+        int testValue = 120_000;
+        
+        System.out.println("");
+        removeElementByPos(list, testPos);
+        showIntList(list);
+        
+        System.out.println("");
+        removeAllOcurrences(list, testOcurrence);
+        showIntList(list);
+        
+        System.out.println("");
+        list = modifyElemByPos(list, testPos2, testValue);
         showIntList(list);
     }
 
@@ -146,19 +178,19 @@ public class Ejercicio6 {
 
     /**
      * Quita el elemento de la lista que esta en la posicion que pasamos
-     * 
+     *
      * @param list la lista con todos los elementos
-     * @param pos  la posicion que vamos a borrar de la lista
+     * @param pos la posicion que vamos a borrar de la lista
      */
     public static void removeElementByPos(ArrayList<Integer> list,
-            int pos) {        
+            int pos) {
         list.remove(pos);
     }
-    
+
     /**
      * Quita todas la ocurrencias de un elemento basandose en el valor que le
      * pasamos
-     * 
+     *
      * @param list la lista de la que vamos a quitar los elementos
      * @param n el valor que tenemos que buscar en la lista para quitar
      */
@@ -169,16 +201,22 @@ public class Ejercicio6 {
             }
         }
     }
-    
+
     /**
-     * Cambiar el valor, en la posicion que pasamos dentro de una lista
+     * Devuelve una lista con el elemento de la posicion que pasamos con un 
+     * nuevo valor que tambien pasamos
      * 
-     * @param list la lista que vamos a cambiar
-     * @param pos la posicion que vamos a cambiar
-     * @param newValue el nuevo valor que le vamos a dar a esa posicion
+     * @param list la lista principal que vamos a modificar
+     * @param pos la posicion que vamos a modificar en la lista
+     * @param newValue el nuevo valor que le vamos a dar
+     * @return  la nueva lista que tiene el elemento modificado
      */
-    public static void modifyElemByPos(ArrayList<Integer> list, int pos, 
-            int newValue) {
-        list.set(pos, newValue);
+    public static ArrayList<Integer> modifyElemByPos(ArrayList<Integer> list, 
+            int pos, int newValue) {
+        ArrayList<Integer> res = list;
+        
+        res.set(pos, newValue);
+        
+        return res;
     }
 }
