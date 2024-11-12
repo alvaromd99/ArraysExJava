@@ -26,17 +26,21 @@ public class Ejercicio4 {
         ArrayList<int[]> pinList = new ArrayList<>();
 
         list = randomPinList(TAM);
-
+        
         System.out.println("Lista de los pins en la lista principal: ");
         showListOfArray(list);
 
         // Parte 1
+        System.out.println("");
+        System.out.println("Pines que contengan un numero.");
         num = getNumber();
         pinList = getPinWithNum(list, num);
         System.out.println("Lista de los pins con el numero " + num + ": ");
         showListOfArray(pinList);
 
         // Parte 2
+        System.out.println("");
+        System.out.println("Esta el pin introducido en la lista.");
         arr = getIntArray();
         System.out.println("Array del usuario: ");
         System.out.println(Arrays.toString(arr));
@@ -192,8 +196,8 @@ public class Ejercicio4 {
      *
      * @param list la lista de arrays en la que se buscará el array.
      * @param arr el array que se va a buscar en la lista.
-     * @return  {@code true}  si el array se encuentra en la lista
-     *          {@code false} si no se encuentra en la lista.
+     * @return {@code true} si el array se encuentra en la lista {@code false}
+     * si no se encuentra en la lista.
      */
     public static boolean isArrayInList(ArrayList<int[]> list, int[] arr) {
         for (int[] listElem : list) {
