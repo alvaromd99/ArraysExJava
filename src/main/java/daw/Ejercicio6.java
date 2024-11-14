@@ -42,15 +42,15 @@ public class Ejercicio6 {
         int testOcurrence = 34;
         int testPos2 = 1;
         int testValue = 120_000;
-        
+
         System.out.println("");
         removeElementByPos(list, testPos);
         showIntList(list);
-        
+
         System.out.println("");
         removeAllOcurrences(list, testOcurrence);
         showIntList(list);
-        
+
         System.out.println("");
         list = modifyElemByPos(list, testPos2, testValue);
         showIntList(list);
@@ -195,7 +195,7 @@ public class Ejercicio6 {
      * @param n el valor que tenemos que buscar en la lista para quitar
      */
     public static void removeAllOcurrences(ArrayList<Integer> list, int n) {
-        for (int i = 0; i < list.size(); i++) {
+        for (int i = list.size() - 1; i >= 0; i--) {
             if (list.get(i) == n) {
                 list.remove(i);
             }
@@ -203,20 +203,40 @@ public class Ejercicio6 {
     }
 
     /**
-     * Devuelve una lista con el elemento de la posicion que pasamos con un 
+     * Quita todas las ocurrencias de un elemento que coincida con el valor que
+     * pasamos
+     *
+     * @param list la lista en la que vamos a quitar los elementos
+     * @param n el valor que tenemos que buscar en la lista
+     * @return la nueva lista solo con los elementos que no son iguales que el
+     * valor que hemos pasado
+     */
+    public static ArrayList<Integer> removeAllOcurrences2(
+            ArrayList<Integer> list, int n) {
+        ArrayList<Integer> resList = new ArrayList<>();
+        for (Integer elem : list) {
+            if (!elem.equals(n)) {
+                resList.add(elem);
+            }
+        }
+        return resList;
+    }
+
+    /**
+     * Devuelve una lista con el elemento de la posicion que pasamos con un
      * nuevo valor que tambien pasamos
-     * 
+     *
      * @param list la lista principal que vamos a modificar
      * @param pos la posicion que vamos a modificar en la lista
      * @param newValue el nuevo valor que le vamos a dar
-     * @return  la nueva lista que tiene el elemento modificado
+     * @return la nueva lista que tiene el elemento modificado
      */
-    public static ArrayList<Integer> modifyElemByPos(ArrayList<Integer> list, 
+    public static ArrayList<Integer> modifyElemByPos(ArrayList<Integer> list,
             int pos, int newValue) {
         ArrayList<Integer> res = list;
-        
+
         res.set(pos, newValue);
-        
+
         return res;
     }
 }
